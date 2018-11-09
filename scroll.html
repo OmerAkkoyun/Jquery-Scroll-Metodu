@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>scroll örnek</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        .container{
+            height: 2250px;
+            width: 100%;
+        }
+        
+        #ustmenu {
+            height: 70px;
+            background: black;
+            color: white;
+        }
+
+        #ustmenu ul {
+            list-style: none;
+        }
+
+        #ustmenu ul li {
+            float: left;
+            font-size: 15px;
+            padding-left: 15px;
+            padding-top: 22.5px;
+        }
+
+        #ustA {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+        }
+
+        #ustA:hover {
+            border: 1px solid white;
+        }
+
+        /*-----------------sol-----------------------*/
+
+        #solbar {
+            margin-top: 15px;
+            position: relative;
+            width: 250px;
+            height: 400px;
+            background-color: deeppink;
+            box-shadow: 0px 1px 10px 2px;
+             width: 250;
+        }
+
+        #solUl {
+            padding: 0;
+            margin: 0;
+            position: absolute;
+        }
+
+        #solUl li {
+
+            list-style: none;
+        }
+
+        #solA:hover {
+            box-shadow: 0px 2px 20px 2px;
+            opacity: 0.9;
+
+        }
+        #solA {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            border: 1px solid gray;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 1px 10px 1px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #clear {
+            clear: both;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="ustmenu">
+
+            <ul>
+                <li><a id="ustA" href="#">Anasayfa</a></li>
+                <li><a id="ustA" href="#">Ürünler</a></li>
+                <li><a id="ustA" href="#">Hakkında</a></li>
+                <li><a id="ustA" href="#">İletişim</a></li>
+            </ul>
+
+        </div>
+        <div id="clear"></div>
+
+
+        <div id="solbar">
+            <ul id="solUl">
+                <li><a id="solA" href="#">Anasayfa</a></li>
+                <li><a id="solA" href="#">Ürünler</a></li>
+                <li><a id="solA" href="#">Hakkında</a></li>
+                <li><a id="solA" href="#">İletişim</a></li>
+                <li><a id="solA" href="#">Kariyer</a></li>
+                <li><a id="solA" href="#">İnfo vsvs</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+
+            $(window).scroll(function() {
+
+                var yukseklik = $(this).scrollTop();
+                if (yukseklik>84){
+                    $("#solbar").css("margin-top", (yukseklik-84)+"px");
+                }
+                else{
+                     $("#solbar").css("margin-top","15px");
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
